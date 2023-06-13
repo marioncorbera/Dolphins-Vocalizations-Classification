@@ -9,7 +9,7 @@ Created on Fri Jul  8 18:22:24 2022
 # classique :
 ###############################################################################    
 
-early stopping à rajouter! contre overfitting
+###early stopping à rajouter! contre overfitting
     
 #import json
 import numpy as np
