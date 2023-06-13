@@ -224,7 +224,7 @@ def Pipeline_preprocessing(datapath, sr=96000, mono=True, seq_time=0.5, overlap=
 ###############################################################################       
         
 DATAPATH = r'G:\Marion\data_training\dataset_mix96_192'
-#DATAPATH = r'F:\Marion\vocalizations'
+# folder where vocalizations are
 SR = 96000
 MONO = True
 SEQ_TIME = 0.5
@@ -243,34 +243,4 @@ with open(r'G:\Marion\Preparation\Supervised_testing\dta.json', "w") as fp: #'w'
     json.dump(data, fp, indent=4)
 
 ###############################################################################
-
-x = np.array(data[str(WANTED_FEATURE)])
-spectro = x
-y = np.array(data['label'])
-labels = y
-
-
-
-
-
-
-
-# ajout autre possibilité features
-
-
-
-
-
-
-### ici pb avec mfccs merdeux à partir de plus 20kHz => essayer autre filtres!
-# recherche best filterbank
-filter_bank = librosa.filters.mel(n_fft=2048, sr=192000, n_mels=13)
-filter_bank.shape
-
-plt.figure(figsize=[25,15])
-librosa.display.specshow(filter_bank, sr=192000, x_axis='linear')
-plt.colorbar(format='%+2.f')
-plt.xlabel('Freq Hz')
-plt.ylabel('bands')
-plt.show()
 
